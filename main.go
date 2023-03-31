@@ -71,8 +71,8 @@ func randomHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	body := "<h2><p>" + quotes[0]["quote"] + "</p></h2> <br>"+
-	"<h3> -" + quotes[0]["author"] + "</h3> "
+	body := "<h2><p>" + quotes[0]["quote"] + "</p></h2> <br>" +
+		"<h3> -" + quotes[0]["author"] + "</h3> "
 
 	data := UserData{
 		PageTitle: "Here is a random quote",
@@ -117,14 +117,17 @@ func greetingHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	// serve static files from the "static" directory
+	mux := http.NewServeMux()
+
 	fs := http.FileServer(http.Dir("public"))
 
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+	mux.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	http.Handle("/", middleware(http.HandlerFunc(homeHandler)))
-	http.Handle("/random", middleware(http.HandlerFunc(randomHandler)))
-	http.Handle("/greeting", middleware(http.HandlerFunc(greetingHandler)))
+	//wor
+	mux.Handle("/", middleware(http.HandlerFunc(homeHandler)))
+	mux.Handle("/random", middleware(http.HandlerFunc(randomHandler)))
+	mux.Handle("/greeting", middleware(http.HandlerFunc(greetingHandler)))
 
-	log.Fatal(http.ListenAndServe("192.168.18.24:80", nil))
+	log.Fatal(http.ListenAndServe("192.168.18.24:80", mux))
 
 }
