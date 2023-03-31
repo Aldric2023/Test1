@@ -39,7 +39,9 @@ func middleware(next http.Handler) http.Handler {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 
-	body := "<h2><p>My Name is Aldric Rivero, i enjoy being in the field of Information Technology and although programming is a challenging   </p></h2>"
+	body := "<h2><p>My name is Aldric Rivero,<br>"+
+	"I enjoy being in the field of Information Technology and although programming can be challenging at time, it is always fun to solve the problems and brainstorm new ideas.<br>"+
+	"</p></h2>"
 
 	data := UserData{
 		PageTitle: "About Me",
