@@ -65,25 +65,26 @@
     <div class="header">
 
         <div class="header-right" style="color: aqua;">
-          <a class="active" href="">Home</a>
+        <a class="active" href="/">About</a>
 
-          <a href="random">Quote of the Day</a>
+        <a href="/random">Quote of the Day</a>
 
-          <a href="greeting">Current Time</a>
+        <a href="/greeting">Current Time</a>
         </div>
 
         <div style="display: flex; align-items: center;">
             <!-- image of me -->
             <img src="http://magmawebapp.sytes.net/static/images/image3.png" alt="Avatar" style="width:200px">
         
-            <h1 style="margin-left: 30%;"> {{ . }} </h1>
+            <h1 style="margin-left: 20%;"> {{ .PageTitle }} </h1>
         </div>
+    </div>
 
-      </div>
-
-      <div id="mainbody">
-        
-      </div>
+    <div>
+    
+        {{ .Body }}
+       
+    </div>
 
 </body>
 </html>
