@@ -2,9 +2,10 @@
 <html>
     <style>
         
-        img {
+        #profile{
             border-radius: 50%;
         }
+
         * {box-sizing: border-box;}
 
         body { 
@@ -58,6 +59,7 @@
         .header-right {
             float: none;
         }
+
         }
     </style>
 <body>                                                          
@@ -74,7 +76,7 @@
 
         <div style="display: flex; align-items: center;">
             <!-- image of me -->
-            <img src="http://magmawebapp.sytes.net/static/images/image3.png" alt="Avatar" style="width:200px">
+            <img id="profile" src="http://magmawebapp.sytes.net/static/images/image3.png" alt="Avatar" style="width:200px">
         
             <h1 style="margin-left: 20%;"> {{ .PageTitle }} </h1>
         </div>
@@ -83,7 +85,7 @@
     <div>
     
         {{ .Body }}
-       
+        
     </div>
 
 </body>

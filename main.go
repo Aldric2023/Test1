@@ -39,9 +39,9 @@ func middleware(next http.Handler) http.Handler {
 
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 
-	body := "<h2><p>My name is Aldric Rivero,<br>"+
-	"I enjoy being in the field of Information Technology and although programming can be challenging at time, it is always fun to solve the problems and brainstorm new ideas.<br>"+
-	"</p></h2>"
+	body := "<h2><p>My name is Aldric Rivero,<br>" +
+		"I enjoy being in the field of Information Technology and although programming can be challenging at time, it is always fun to solve the problems and brainstorm new ideas.<br>" +
+		"</p></h2>"
 
 	data := UserData{
 		PageTitle: "About Me",
@@ -71,7 +71,8 @@ func randomHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	body := "<h2><p>" + quotes[0]["quote"] + "</p></h2> <h3> -" + quotes[0]["author"] + "</h3> "
+	body := "<h2><p>" + quotes[0]["quote"] + "</p></h2> <br>"+
+	"<h3> -" + quotes[0]["author"] + "</h3> "
 
 	data := UserData{
 		PageTitle: "Here is a random quote",
