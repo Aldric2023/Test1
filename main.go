@@ -128,6 +128,7 @@ func main() {
 	mux.Handle("/random", middleware(http.HandlerFunc(randomHandler)))
 	mux.Handle("/greeting", middleware(http.HandlerFunc(greetingHandler)))
 
-	log.Fatal(http.ListenAndServe("192.168.18.24:80", mux))
+	log.Fatal(http.ListenAndServe("localhost:80", mux))
+
 
 }
